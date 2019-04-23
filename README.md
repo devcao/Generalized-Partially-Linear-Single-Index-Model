@@ -1,4 +1,4 @@
-# Generalized-Partially-Linear-Single-Index-Model
+# Generalized Partially Linear Single Index Model with  Measurement Error, Instruments and Binary Response
 ## Q. Wang, Y. Ma
 
 * **Abstract:** P
