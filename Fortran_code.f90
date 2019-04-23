@@ -551,23 +551,23 @@ subroutine Y_condi_other(theta,Gi,S,Z,epsdis,Y,fY,deri)
 end subroutine Y_condi_other
 
 !If link function is inverse probit
-subroutine Y_condi_other(theta,Gi,S,Z,epsdis,Y,fY,deri)
-  double precision, dimension(6), intent(in) :: theta
-  double precision, dimension(4), intent(in) :: Z
-  double precision, intent(in) :: S,Gi
-  double precision, intent(in) :: epsdis
-  integer, intent(in) :: Y
-  double precision, intent(out) :: fY,deri
-  double precision :: tmp1, tmp2,tmp3,tmp4
-  tmp1=0.0; tmp2=0.0; tmp3=0.0; tmp4=0.0
-  call mm(theta(1:2), S,Z,tmp1)
-  call ownadd(tmp1,epsdis,tmp2)
-  call inv_probit(theta(3), Gi,tmp2,tmp3)
-  call der_probit(theta(3), Gi,tmp2,tmp4)
-  fY = 1-dble(Y)+(2*dble(Y)-1)*tmp3
-  deri = (2*dble(Y)-1)*tmp4
-  return
-end subroutine Y_condi_other
+!subroutine Y_condi_other(theta,Gi,S,Z,epsdis,Y,fY,deri)
+!  double precision, dimension(6), intent(in) :: theta
+!  double precision, dimension(4), intent(in) :: Z
+!  double precision, intent(in) :: S,Gi
+!  double precision, intent(in) :: epsdis
+!  integer, intent(in) :: Y
+!  double precision, intent(out) :: fY,deri
+!  double precision :: tmp1, tmp2,tmp3,tmp4
+!  tmp1=0.0; tmp2=0.0; tmp3=0.0; tmp4=0.0
+!  call mm(theta(1:2), S,Z,tmp1)
+!  call ownadd(tmp1,epsdis,tmp2)
+!  call inv_probit(theta(3), Gi,tmp2,tmp3)
+!  call der_probit(theta(3), Gi,tmp2,tmp4)
+!  fY = 1-dble(Y)+(2*dble(Y)-1)*tmp3
+!  deri = (2*dble(Y)-1)*tmp4
+!  return
+!end subroutine Y_condi_other
 
 subroutine mm(alpha,S,Z,X)
   double precision, dimension(2), intent(in) :: alpha
